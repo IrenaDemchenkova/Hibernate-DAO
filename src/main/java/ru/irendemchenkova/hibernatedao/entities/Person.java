@@ -1,20 +1,21 @@
 package ru.irendemchenkova.hibernatedao.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "PERSONS")
+@IdClass(String.class)
 public class Person {
     @Id
     @Column(length = 100)
     public String name;
 
+    @Id
     @Column(length = 100)
     public String surname;
 
+    @Id
+    @Column
     public int age;
 
     @Column(length = 10)
